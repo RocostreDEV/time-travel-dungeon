@@ -1,109 +1,75 @@
-# Dungeon Escape - Development Notes
+# Time Travel Dungeon (Beta)
 
-## 🎮 Current Implementation
+## 🎮 Current Implementation Status
 
-### Core Features
-- ✅ 30x30 grid-based game board
-- ✅ Basic player movement (WASD/Arrow keys)
-- ✅ Difficulty selection (Easy/Medium/Hard)
-- ✅ HUD with charges, coins, floor display
-- ✅ Procedural maze generation
-- ✅ Basic guard placement
-- ✅ Collectibles (coins, charges)
+### Core Features (Beta)
+- ✅ 30x30 grid-based game board with procedural dungeon generation
+- ✅ Player movement system (WASD/Arrow keys)
+- ✅ Difficulty selection (Easy: 3 charges, Medium: 1 charge, Hard: 0 charges)
+- ✅ Enhanced HUD with charges, coins, floor display
+- ✅ Pause/Resume functionality (ESC key or button)
+- ✅ Exit to main menu option
+- ✅ Guard AI with vision cones and patrol behavior
+- ✅ Collectible system (coins, charges)
+- ✅ Visual effects for players, guards, and items
 
-## 🚀 TODO List
+## 🚧 Recent Updates
+- Added pause menu with overlay
+- Implemented exit to main menu functionality
+- Enhanced guard movement AI
+- Improved visual effects and animations
+- Added coin collection system
+- Implemented charge usage mechanics
+- Enhanced dungeon generation with rooms and corridors
 
-### High Priority
-1. Guard AI Implementation
-   - [ ] Add flashlight cone visualization
-   - [ ] Implement guard patrol paths
-   - [ ] Add guard state machine (patrol, alert, chase)
-   - [ ] Collision detection with player
+## 🎯 Immediate TODO
+1. Guard AI Refinement
+   - [ ] Improve patrol path intelligence
+   - [ ] Fine-tune vision cone detection
+   - [ ] Enhance chase behavior
+   - [ ] Add guard state transitions
 
-2. Time Travel Mechanics
+2. Player Mechanics
+   - [ ] Smooth out movement
    - [ ] Add time travel animation
-   - [ ] Implement checkpoint system
-   - [ ] Add travel pods mechanics
-   - [ ] Death/respawn system
+   - [ ] Implement proper checkpoint system
+   - [ ] Add travel pods
 
 3. Level Design
-   - [ ] Improve maze generation algorithm
-   - [ ] Add The Lab rooms every 5 floors
-   - [ ] Implement hidden buttons
-   - [ ] Add golden keys and chests
+   - [ ] Further improve room generation
+   - [ ] Add special rooms (The Lab)
+   - [ ] Implement secret areas
+   - [ ] Add level progression system
 
-### Medium Priority
-1. Audio System
-   - [ ] Add sound effects for:
-     - [ ] Movement
-     - [ ] Collecting items
-     - [ ] Guard alerts
-     - [ ] Time travel
-     - [ ] Background music
+## 🐛 Known Issues (Being Addressed)
+- Guard movement needs smoothing
+- Collision detection timing could be improved
+- Room generation occasionally creates tight spaces
+- Guard vision cone needs visual refinement
+- Coin collection feedback needs enhancement
 
-2. Visual Improvements
-   - [ ] Add pixel art sprites for:
-     - [ ] Player character
-     - [ ] Guards
-     - [ ] Items
-     - [ ] Environment
-   - [ ] Add animations for:
-     - [ ] Walking
-     - [ ] Time travel
-     - [ ] Guard patrols
+## 🔧 Technical Improvements Needed
+- Optimize render performance
+- Implement proper state persistence
+- Add error boundaries
+- Create comprehensive test suite
+- Refine type definitions
 
-3. Game Progression
-   - [ ] Implement save system
-   - [ ] Add store functionality
-   - [ ] Create bonus rooms
-   - [ ] Add achievements
+## 🎮 Controls
+- Movement: Arrow keys or WASD
+- Pause: ESC key or pause button
+- Exit: Exit button in HUD
+- Reset (when game over): R key
 
-### Low Priority
-1. Polish
-   - [ ] Add screen transitions
-   - [ ] Implement particle effects
-   - [ ] Add tooltips and tutorials
-   - [ ] Improve UI/UX
+## ⚠️ Beta Notice
+This game is currently in beta. Features are functional but undergoing continuous improvement. Expect regular updates and refinements to gameplay mechanics, visuals, and performance.
 
-2. Additional Features
-   - [ ] Add boss levels
-   - [ ] Create story elements
-   - [ ] Add power-ups
-   - [ ] Implement secrets and easter eggs
-
-## 🐛 Known Issues
-- Guard placement needs collision detection with walls
-- Maze generation sometimes creates isolated rooms
-- Player movement could be smoother
-- Need to implement coin/charge collection logic
-
-## 🔧 Technical Debt
-- Add proper TypeScript types for grid cells
-- Implement proper state management for game saves
-- Optimize render performance for larger levels
-- Add proper error boundaries
-- Implement proper testing suite
-
-## 📝 Development Notes
-- Consider using Web Audio API for sound effects
-- Look into using Canvas for better performance
-- Research pathfinding algorithms for guard AI
-- Consider implementing WebGL for lighting effects
-
-## 🎯 Next Steps
-1. Implement guard AI and flashlight mechanics
-2. Add proper collision detection
-3. Create time travel animation system
-4. Improve maze generation algorithm
-5. Add checkpoint system
-
-Remember:
-- Keep components small and focused
-- Document complex algorithms
-- Test edge cases
-- Optimize performance regularly
-- Keep accessibility in mind for future updates
+## 🔄 Development Cycle
+- Daily improvements to core mechanics
+- Weekly feature additions
+- Regular performance optimizations
+- Continuous bug fixes and refinements
 
 ---
 
-*Note: This is a personal development roadmap. Update regularly as features are implemented or priorities change.*
+*Note: This is an active development project. Features and mechanics are subject to change as we improve the game experience.*

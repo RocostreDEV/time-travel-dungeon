@@ -2,17 +2,29 @@ import React from 'react';
 import { useGame } from '../context/GameContext';
 
 const Player: React.FC = () => {
-  const { playerPosition } = useGame();
+  const { state } = useGame();
+  const { playerPosition } = state;
 
   return (
     <div
-      className="absolute w-[calc(100%/30)] h-[calc(100%/30)] transition-all duration-200 ease-in-out"
+      className="absolute w-[20px] h-[20px] transition-all duration-150"
       style={{
-        left: `${(playerPosition.x * 100) / 30}%`,
-        top: `${(playerPosition.y * 100) / 30}%`,
+        left: `${playerPosition.x * 20}px`,
+        top: `${playerPosition.y * 20}px`,
       }}
     >
-      <div className="w-full h-full bg-purple-500 rounded-full shadow-lg transform transition-transform animate-pulse" />
+      <div className="relative w-full h-full">
+        {/* Player body */}
+        <div className="absolute inset-0 bg-green-500 rounded-full player-glow">
+          <div className="absolute inset-0 bg-green-400/30 rounded-full animate-pulse" />
+        </div>
+        
+        {/* Energy aura */}
+        <div className="absolute inset-[-4px] bg-green-500/20 rounded-full animate-pulse-ring" />
+        
+        {/* Core energy */}
+        <div className="absolute inset-[4px] bg-green-300 rounded-full animate-glow" />
+      </div>
     </div>
   );
 };

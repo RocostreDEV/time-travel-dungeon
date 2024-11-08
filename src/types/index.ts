@@ -3,25 +3,42 @@ export type Position = {
   y: number;
 };
 
-export type Direction = 'up' | 'down' | 'left' | 'right';
+export type CellType = 'wall' | 'floor' | 'coin' | 'charge';
 
-export type CellType = 'wall' | 'floor' | 'checkpoint' | 'coin' | 'charge';
-
-export type GuardType = {
+export type Cell = {
+  type: CellType;
   x: number;
   y: number;
-  direction: Direction;
-  isAlerted: boolean;
-  patrolPath?: Position[];
 };
 
-export interface GameState {
+export type GuardType = {
+  id: string;
+  position: Position;
+  direction: 'left' | 'right' | 'up' | 'down';
+  path: Position[];
+  currentPathIndex: number;
+  isAlerted: boolean;
+  visionRange: number;
+};
+
+export type GameState = {
   isPlaying: boolean;
+  isPaused: boolean;
+  difficulty: string;
+  grid: Cell[][];
   playerPosition: Position;
   guards: GuardType[];
-  charges: number;
   coins: number;
-  currentFloor: number;
-  difficulty: string;
-  grid: any[][];
-}
+  charges: number;
+  level: number;
+  lastCheckpoint: Position | null;
+  gameOver: boolean;
+};
+
+export type GameAction =
+  | { type: 'START_GAME'; difficulty: string }
+  | { type: 'MOVE_PLAYER'; direction: 'up' | 'down' | 'left' | 'right' }
+  | { type: 'RESET_TO_CHECKPOINT' }
+  | { type: 'UPDATE_GUARDS' }
+  | { type: 'TOGGLE_PAUSE' }
+  | { type: 'EXIT_GAME' };

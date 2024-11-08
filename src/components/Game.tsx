@@ -1,36 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useGame } from '../context/GameContext';
 import GameBoard from './GameBoard';
-import HUD from './HUD';
 import MainMenu from './MainMenu';
-import { Battery, Coins } from 'lucide-react';
+import HUD from './HUD';
 
 const Game: React.FC = () => {
-  const { 
-    gameState, 
-    startGame, 
-    isGameStarted,
-    charges,
-    coins,
-    currentFloor,
-    difficulty
-  } = useGame();
+  const { state } = useGame();
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      {!isGameStarted ? (
-        <MainMenu onStart={startGame} />
-      ) : (
-        <div className="relative">
-          <HUD 
-            charges={charges}
-            coins={coins}
-            floor={currentFloor}
-            difficulty={difficulty}
-          />
-          <GameBoard />
-        </div>
-      )}
+    <div className="min-h-screen bg-gray-950 text-white p-8">
+      <div className="max-w-4xl mx-auto">
+        {!state.isPlaying ? (
+          <MainMenu />
+        ) : (
+          <div className="space-y-4">
+            <HUD />
+            <div className="flex justify-center">
+              <GameBoard />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
